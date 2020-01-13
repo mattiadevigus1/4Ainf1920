@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>
+        <delay>2</delay>
+        Mi dispiace, non ho capito la domanda.
+        Potresti riformularla per favore?
+    </template>
+  </category>
+</aiml>

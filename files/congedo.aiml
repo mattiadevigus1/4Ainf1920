@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	
+	<category>
+	    <pattern>^ grazie ^</pattern>
+	    <template>
+	        Di nulla! Mi trovi sempre qui, cercami se hai bisogno.
+	    </template>
+    </category>
+	
+<category>
+    <pattern>ciao</pattern>
+    <template>hey</template>
+</category>
+</aiml>

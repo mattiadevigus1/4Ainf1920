@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+	<topic name="orario">
+	    
+	    <category>
+	        <pattern>*</pattern>
+	        <that>DI QUALE SEZIONE VUOI CONOSCERE L ORARIO</that>
+	        <template>
+	            <think><set name="sezione"><star /></set></think>
+	            Di quale classe?
+	            </template>
+        </category>
+        
+        <category>
+	        <pattern>La *</pattern>
+	        <that>DI QUALE SEZIONE VUOI CONOSCERE L ORARIO</that>
+	        <template>
+	            <think><set name="sezione"><star /></set></think>
+	            Di quale classe?
+	            </template>
+        </category>
+        
+        <category>
+	        <pattern>*</pattern>
+	        <that>DI QUALE CLASSE</that>
+	        <template>
+	            <think><set name="classe"><star /></set></think>
+	            <think><set name="classe"><star /></set></think>
+	            <get name="classe" />
+	            <get name="sezione" /> 
+	            <link>
+	                <text>Ecco l'orario</text>
+	                <url></url>
+                </link> 
+	            </template>
+        </category>
+        
+        <category>
+	        <pattern>La *</pattern>
+	        <that>DI QUALE CLASSE</that>
+	        <template>
+	            <think><set name="classe"><star /></set></think>
+	            <think><set name="classe"><star /></set></think>
+	            <get name="classe" />
+	            <get name="sezione" />
+	            <link>
+	                <text>Ecco l'orario</text>
+	                <url></url>
+                </link> 
+                della 
+	            
+	            
+	            </template>
+        </category>
+        
+   
+   
+   
+        
+        <!-- https://www.itiscuneo.gov.it/index.php/area-riservata/orari# -->
+        
+        
+	    
+	</topic>
+</aiml>

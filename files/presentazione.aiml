@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+
+	
+	<category>
+	    <pattern>*</pattern>
+	    <template>
+	        
+	        <image>https://upload.wikimedia.org/wikipedia/commons/8/88/Mini-Robot.png</image>
+	        
+	        <star />,  
+	        sono <bot name="name" /> e sono qui per aiutarti!
+	        Come ti chiami?
+	        <think><set name="topic">nome</set></think>
+	    </template>
+    </category>
+    
+    <topic name="nome">
+    <!-- sono -->
+    <!-- mi chiamo -->
+    <!-- solo nome -->
+    
+        <category>
+            <pattern>Mi chiamo *</pattern>
+            <template>
+                <star />, ti dÃ² il benvenuto all'Istituto Tecnico Delpozzo di Cuneo!
+                <delay>1</delay>
+                Sei un genitore o uno studente?
+                <think><set name="topic">scelta</set></think>
+            </template>
+        </category>
+    
+    <!-- COMPLETARE CON IL TOPIC CORRETTO -->	
+        <category>
+            <pattern>Sono *</pattern>
+            <template>
+                <star />, ti dÃ² il benvenuto all'istituto Pozzo di Cuneo!
+                <think><set name="topic">...</set></think>
+                <delay>1</delay>
+                Sei un genitore o uno studente?
+            </template>
+        </category>
+    
+     <!-- PATTERN GENERICO DA COMPLETARE -->	     
+        <category>
+            <pattern>*</pattern>
+            <template>
+                ...
+            </template>
+        </category>
+    
+    </topic>
+	
+</aiml>
