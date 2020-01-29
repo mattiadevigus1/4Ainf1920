@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Playlist{
-    List<Brano> lista;
+    @xmlElemets List<Brano> lista;
     private static int cont= 0;
 
     public Playlist(List<String> lista) {
@@ -58,7 +58,7 @@ public class Playlist{
         }
 
 
-        List list = new ArrayList(20);
+        @xmlElemets List list = new ArrayList(20);
         Brano brano = new Brano("Prova", "Io", "20" );
         Brano brano2 = new Brano("Pro2va", "I2o", "220" );
         Playlist playlist = new Playlist(list);
