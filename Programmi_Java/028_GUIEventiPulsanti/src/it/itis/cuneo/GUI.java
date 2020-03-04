@@ -1,5 +1,22 @@
 package it.itis.cuneo;
 
+/* Esercizio Java:
+Creare un’applicazione che consenta ad un utente di prenotare il biglietto di sola andata per una data destinazione, utilizzando una GUI apposita.
+
+1. L’utente deve inserire le seguenti informazioni: − cognome; − nome; − telefono; − città di partenza; − città di destinazione; − data.
+
+2. Dopo l’inserimento dei dati, l’utente può premere il pulsante “Conferma”, per confermare la prenotazione o il pulsante “Annulla”, per non confermarla. − La pressione sul pulsante “Conferma” ha come effetto la memorizzazione della prenotazione in un array di oggetti “Prenotazione” e la comunicazione all’utente stesso dell’avvenuta registrazione, mediante visualizzazione di una finestra di dialogo. − La pressione del pulsante “Annulla” ha come effetto la cancellazione dei dati inseriti dalla GUI e la comunicazione dell’avvenuto annullamento attraverso una finestra di dialogo.
+
+3. Aggiungere un altro pulsante stampa, che permette di aprire in una finestra di dialogo la stampa degli elementi caricati nell'array, utilizzando il codice qui sotto riportato:
+JOptionPane.showMessageDialog(null, vPrenotazioni.toString());
+
+4: Inserire un pulsante salva, per scaricare le informazioni della lista di prenotazioni su un file csv.
+
+Autore: Devigus Mattia
+
+ */
+
+
 import com.sun.org.apache.xpath.internal.axes.PredicatedNodeTest;
 import javafx.scene.layout.Pane;
 import org.omg.CORBA.PRIVATE_MEMBER;
@@ -17,8 +34,9 @@ public class GUI extends JFrame implements ActionListener{
     private JFrame f;
     private JLabel label, label2, label3, label4, label5, label6;
     private JTextField txt1, txt2, txt3, txt4,txt5,txt6, txt7;
-    private JButton button = new JButton("Conferma");
+    private JButton button = new JButton("Conferma e Salva");
     private JButton button1 = new JButton("Annulla");
+    private JButton button2 = new JButton("Stampa");
     public ArrayList<Prenotazione> listP = new ArrayList <Prenotazione>();
 
     public static final String path = "preventivo.csv";
@@ -68,6 +86,7 @@ public class GUI extends JFrame implements ActionListener{
 
         f.add(button);
         f.add(button1);
+        f.add(button2);
 
         f.setLayout(new FlowLayout(FlowLayout.CENTER));
         //setting flow layout of right alignment
@@ -77,6 +96,7 @@ public class GUI extends JFrame implements ActionListener{
 
         button.addActionListener(this);
         button1.addActionListener(this);
+        button2.addActionListener(this);
 
     }
 
@@ -128,7 +148,11 @@ public class GUI extends JFrame implements ActionListener{
             txt3.setText("");
             txt4.setText("");
             txt5.setText("");
-            txt6.setText("");;
+            txt6.setText("");
+            JOptionPane.showMessageDialog(null, "Hai cancellato correttament. Scrivi");
+        } else if (e.getSource() == button2)
+        {
+            JOptionPane.showMessageDialog(null, listP.toString());
         }
     }
 
@@ -136,6 +160,6 @@ public class GUI extends JFrame implements ActionListener{
     public String toString() {
         return "GUI{" +
                 "listP=" + listP +
-                '}' + "\r \n";
+                '}' ;
     }
 }
